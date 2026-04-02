@@ -145,7 +145,7 @@ export default function Home() {
         </div>
         <div
           className="history-teaser__image"
-          style={{ backgroundImage: "url('/assets/history-hero.jpg')" }}
+          style={{ backgroundColor: '#1A3A2A' }}
           aria-hidden="true"
         />
       </section>
