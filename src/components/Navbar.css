@@ -1,0 +1,228 @@
+/* ── Navbar Shell ───────────────────────────────────────────── */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.5rem;
+  height: 72px;
+  transition:
+    background 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+}
+
+.navbar--scrolled {
+  background: var(--parchment);
+  border-bottom-color: var(--border);
+  box-shadow: 0 2px 16px rgba(44, 36, 22, 0.07);
+}
+
+/* ── Badge (left) ───────────────────────────────────────────── */
+.navbar__badge {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.35s;
+  flex: 0 0 auto;
+}
+
+.navbar--scrolled .navbar__badge {
+  color: var(--ink);
+}
+
+.navbar__badge-text {
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+/* ── Centre nav links ───────────────────────────────────────── */
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar__link {
+  font-family: var(--font-ui);
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.88);
+  text-decoration: none;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+
+.navbar--scrolled .navbar__link {
+  color: var(--ink-light);
+}
+
+.navbar__link:hover,
+.navbar__link.active {
+  color: var(--gold);
+}
+
+.navbar--scrolled .navbar__link:hover,
+.navbar--scrolled .navbar__link.active {
+  color: var(--gold);
+}
+
+/* ── Right controls ─────────────────────────────────────────── */
+.navbar__right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 0 0 auto;
+}
+
+.navbar__cta {
+  font-family: var(--font-ui);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  background: var(--gold);
+  color: #fff;
+  border: none;
+  padding: 0.65rem 1.4rem;
+  cursor: pointer;
+  border-radius: 0;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+
+.navbar__cta:hover {
+  background: var(--gold-light);
+  color: var(--ink);
+}
+
+.navbar__logout {
+  font-family: var(--font-ui);
+  font-size: 0.6rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.7);
+  padding: 0.55rem 1rem;
+  cursor: pointer;
+  border-radius: 0;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.navbar--scrolled .navbar__logout {
+  border-color: var(--border);
+  color: var(--ink-light);
+}
+
+.navbar__logout:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* ── Hamburger ──────────────────────────────────────────────── */
+.navbar__hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+
+.navbar__hamburger span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: rgba(255, 255, 255, 0.9);
+  transition: background 0.35s;
+}
+
+.navbar--scrolled .navbar__hamburger span {
+  background: var(--ink);
+}
+
+/* ── Mobile drawer ──────────────────────────────────────────── */
+.navbar__mobile {
+  display: none;
+  position: fixed;
+  top: 72px;
+  left: 0;
+  right: 0;
+  background: var(--parchment);
+  border-bottom: 1px solid var(--border);
+  padding: 1.5rem 2rem 2rem;
+  flex-direction: column;
+  gap: 0;
+  z-index: 99;
+  box-shadow: 0 8px 24px rgba(44, 36, 22, 0.1);
+}
+
+.navbar__mobile.open {
+  display: flex;
+}
+
+.navbar__mobile-link {
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink-light);
+  text-decoration: none;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--border);
+  transition: color 0.2s;
+}
+
+.navbar__mobile-link:hover,
+.navbar__mobile-link.active {
+  color: var(--gold);
+}
+
+.navbar__mobile-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+  flex-wrap: wrap;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 960px) {
+  .navbar__links {
+    display: none;
+  }
+
+  .navbar__cta,
+  .navbar__logout {
+    display: none;
+  }
+
+  .navbar__hamburger {
+    display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0 1.25rem;
+  }
+}

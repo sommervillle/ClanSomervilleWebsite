@@ -1,0 +1,127 @@
+/* ── Footer Shell ───────────────────────────────────────────── */
+.footer {
+  background: var(--ink);
+  color: var(--parchment);
+  padding: 4.5rem 2.5rem 2rem;
+  margin-top: auto;
+}
+
+/* ── Three-column grid ──────────────────────────────────────── */
+.footer__columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  max-width: 1100px;
+  margin: 0 auto 3.5rem;
+}
+
+.footer__col-title {
+  font-family: var(--font-ui);
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.25rem;
+  display: block;
+}
+
+.footer__col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.footer__col ul a {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: rgba(245, 240, 232, 0.65);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer__col ul a:hover {
+  color: var(--gold);
+}
+
+.footer__col p {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: rgba(245, 240, 232, 0.65);
+}
+
+.footer__col-links {
+  margin-top: 1.25rem;
+}
+
+/* ── Divider + Identity ─────────────────────────────────────── */
+.footer__divider {
+  width: 60px;
+  height: 1px;
+  background: var(--gold);
+  margin: 0 auto 1.75rem;
+  opacity: 0.45;
+}
+
+.footer__identity {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.footer__clan-name {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--parchment);
+  letter-spacing: 0.06em;
+  display: block;
+}
+
+.footer__motto {
+  font-family: var(--font-ui);
+  font-size: 0.6rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-top: 0.4rem;
+  display: block;
+}
+
+/* ── Bottom bar ─────────────────────────────────────────────── */
+.footer__bottom {
+  border-top: 1px solid rgba(201, 185, 154, 0.18);
+  padding-top: 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.footer__copyright {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: rgba(245, 240, 232, 0.45);
+}
+
+.footer__note {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 0.8rem;
+  color: rgba(245, 240, 232, 0.3);
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .footer__columns {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .footer {
+    padding: 3.5rem 1.5rem 1.75rem;
+  }
+}
