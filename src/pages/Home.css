@@ -223,7 +223,10 @@
 }
 
 .history-teaser__image {
-  background: linear-gradient(150deg, #1A3A2A 0%, #0D2418 60%, #091A10 100%);
+  background-color: #0D2418;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   min-height: 400px;
 }
 

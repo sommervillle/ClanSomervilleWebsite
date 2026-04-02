@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import historyHeroImg from '../assets/history-hero.jpg'
 import './Home.css'
 
 /* ── Inline SVGs ─────────────────────────────────────────────── */
@@ -143,7 +144,11 @@ export default function Home() {
             Explore the History →
           </Link>
         </div>
-        <div className="history-teaser__image" aria-hidden="true" />
+        <div
+          className="history-teaser__image"
+          style={{ backgroundImage: `url(${historyHeroImg})` }}
+          aria-hidden="true"
+        />
       </section>
 
       {/* ──────────────────────────────────────────────────────────
